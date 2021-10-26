@@ -7,6 +7,7 @@ const cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var hmiRouter = require("./routes/hmi");
+var dataRouter = require("./routes/data");
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(function (req, res, next) {
 
 app.use("/", indexRouter);
 app.use("/hmi", hmiRouter);
+app.use("/data", dataRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
